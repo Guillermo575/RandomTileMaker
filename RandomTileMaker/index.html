@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>CodePen - RandomTileMaker</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+</head>
+<body>
+	<table>
+		<tr>
+			<td style="vertical-align:top;">
+				<div style="background-color: #FFA; border: solid 3px #9E6D3D; border-radius: 10px;">
+					<table>
+						<tr>
+							<td> Img. Width:</td> <td> <input type="text" id="width" value="480" style='width:40px;'> </td>
+							<td> Img. Height: </td> <td> <input type="text" id="height" value="360" style='width:40px;'> </td>
+						</tr>
+						<tr>
+							<td> Tile Width: </td> <td> <input type="text" id="TileWidth" value="96" style='width:40px;'> </td>
+							<td> Factor: </td> <td> <input type="text" id="TileWidthFactor" value=".25" style='width:40px;'> </td>			
+						</tr>
+						<tr>
+							<td> Tile Height: </td> <td> <input type="text" id="TileHeight" value="96" style='width:40px;'> </td>
+							<td> Factor: </td> <td> <input type="text" id="TileHeightFactor" value=".25" style='width:40px;'> </td>			
+						</tr>							
+					</table>
+					<hr style='border: solid 1px #9E6D3D;'/>
+					<table>
+						<tr>
+							<td> Base: </td>
+							<td>
+								<input type="color" value="#575935" id="ColorBase" style='width:50px;'> 
+								<input type="checkbox" id="BuildBase" checked>
+							</td>
+						</tr>
+						<tr>
+							<td> Shade: </td>
+							<td> 
+								<input type="color" value="#484024" id="ColorShade" style='width:50px;'> 
+								<input type="text" id="WidthShade" value="5" style='width:20px;'>
+							</td>
+							<td> 
+										<input type="checkbox" id="BuildShade" checked>
+								Distort <input type="checkbox" id="BuildShadeDistort" checked>
+							</td>
+						</tr>
+						<tr>
+							<td> DarkShade: </td>
+							<td> 
+								<input type="color" value="#2F2419" id="ColorDarkerShade" style='width:50px;'> 
+								<input type="text" id="WidthDarkerShade" value="3" style='width:20px;'>
+							</td>
+							<td>
+										<input type="checkbox" id="BuildDarkerShade" checked>
+								Distort <input type="checkbox" id="BuildDarkerShadeDistort" checked> 
+							</td>
+						</tr>
+						<tr>
+							<td> Tint: </td>
+							<td>
+								<input type="color" value="#70744C" id="ColorTint" style='width:50px;'> 
+								<input type="text" id="WidthTint" value="5" style='width:20px;'>
+							</td>
+							<td> 
+										<input type="checkbox" id="BuildLighting" checked>
+								Distort <input type="checkbox" id="BuildTint" checked>
+							</td>
+						</tr>
+						<tr>
+							<td> Crack: </td>
+							<td> 
+								<input type="color" value="#4c4428" id="ColorCrack" style='width:50px;'>
+								<input type="checkbox" id="BuildCracks" checked>
+							</td>
+						</tr>
+					</table>
+					<hr style='border: solid 1px #9E6D3D;'/>
+					<table style='width: 100%;'>
+						<tr>
+							<td colspan="10" style="text-align:center">
+								<button type="button" onclick="CreateTile_Click();">CREATE</button>
+								<button type="button" onclick="ReloadTile_Click();">RELOAD</button>
+								<button type="button" onclick="AddTile_Click();">ADD</button>
+							</td>
+						</tr>
+					</table>					
+				</div>
+			</td>
+			<td style="width: 30px;">
+			</td>
+			<td style="vertical-align:top;">
+				<canvas id="canvas"></canvas>
+			</td>
+			<td style="vertical-align:top;">
+				<div style="background-color: #FFA; border: solid 3px #9E6D3D; border-radius: 10px;">
+					<table>
+						<tr>
+							<td> Width:</td> <td> <input type="text" id="TileMapWidth" value="480" style='width:40px;'> </td>
+							<td> Height: </td> <td> <input type="text" id="TileMapHeight" value="900" style='width:40px;'> </td>
+						</tr>						
+					</table>
+					<hr style='border: solid 1px #9E6D3D;'/>
+					<table style='width: 100%;'>
+						<tr>
+							<td colspan="10" style="text-align:center">
+								<button type="button" onclick="CreateTileMap_Click();">CREATE</button>
+							</td>
+						</tr>
+					</table>	
+				</div>
+			</td>
+			<td style='border:solid 2px #000'>
+				<canvas id="TileMap"></canvas>
+			</td>
+		</tr>
+	</table>
+	<script src='js/perlin.js'></script>
+	<script src="js/TileGenerate.js"></script>
+	<script src="js/GUI.js"></script>
+</body>
+</html>
